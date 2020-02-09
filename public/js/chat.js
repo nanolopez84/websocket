@@ -6,7 +6,7 @@ const $messageFormButton = $messageForm.querySelector('button');
 const $sendLocationButton = document.querySelector('#send-location');
 
 socket.on('message', (message) => {
-    console.log(message);
+    console.log('Message received:', message);
 });
 
 $messageForm.addEventListener('submit', (e) => {
@@ -15,12 +15,12 @@ $messageForm.addEventListener('submit', (e) => {
     $messageFormButton.setAttribute('disabled', 'disabled');
 
     const message = e.target.elements.message.value;
-    socket.emit('message', message, (message) => {
+    socket.emit('message', message, () => {
         $messageFormButton.removeAttribute('disabled');
         $messageFormInput.value = '';
         $messageFormInput.focus();
 
-        console.log('Messaged delivered', message);
+        console.log('Message delivered:', message);
     });
 });
 
