@@ -12,7 +12,6 @@
 
 ```
 # npm start
-
 ```
 
 * Open two chat tabs in your browser at localhost:3000
