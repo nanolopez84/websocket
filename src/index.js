@@ -17,8 +17,8 @@ app.use(favicon(path.join(__dirname,'../public','images','favicon.ico')));
 io.on('connection', (socket) => {
     console.log('New connection');
 
-    socket.emit('message', 'Welcome');
-    socket.broadcast.emit('message', 'New user has joined');
+    socket.emit('message', '*Welcome*');
+    socket.broadcast.emit('message', '*New user has joined*');
 
     socket.on('message', (message, callback) => {
         socket.broadcast.emit('message', message);
@@ -31,8 +31,8 @@ io.on('connection', (socket) => {
     });
 
     socket.on('disconnect', () => {
-        console.log('Disconnected');
-        io.emit('message', 'A user has leaved');
+        console.log('User disconnected');
+        io.emit('message', '*A user has leaved*');
     });
 });
 

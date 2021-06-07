@@ -7,6 +7,9 @@ const $sendLocationButton = document.querySelector('#send-location');
 
 socket.on('message', (message) => {
     console.log('Message received:', message);
+
+    let br = document.createElement("br");
+    document.querySelector("#history").append(message, br);
 });
 
 $messageForm.addEventListener('submit', (e) => {

@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Node.js Chat</title>
     </head>
     <body>
-        Chat App
+        <h1>Chat App</h1>
         <form id="message-form">
             <input name="message" placeholder="message">
             <button>Send</button>
+            <button id="send-location">Send location</button>
         </form>
-        <button id="send-location">Send location</button>
+        <p/>
+        <div id="history"></div>
         <script src="/socket.io/socket.io.js"></script>
         <script src="/js/chat.js"></script>
     </body>
