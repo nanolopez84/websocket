@@ -1,6 +1,6 @@
 # Web socket Node.js client/server app
 
-Basic chat with websockets and Node.js
+Basic local chat with websockets and Node.js
 
 ## Instructions
 
